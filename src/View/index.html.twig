@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}page twig{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>TWIG</h1>
+    <p class="important">
+        Welcome on my awesome homepage.
+    </p>
+    <div class="row">
+            {% for product in products %}
+            <div class="card col-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product }}</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+{% endblock %}
